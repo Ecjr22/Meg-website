@@ -43,9 +43,12 @@
   --chart-3: 340 50% 65%;
   --chart-4: 185 40% 45%;
   --chart-5: 45 50% 50%;
-  --font-sans: Open Sans, sans-serif;
-  --font-serif: Georgia, serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "Libre Baskerville", Georgia, serif;
   --font-mono: Menlo, monospace;
+  --blush: 12 45% 75%;
+  --blush-foreground: 25 30% 20%;
+  --blush-border: 12 35% 65%;
   --radius: .5rem;
   --shadow-2xs: 0px 2px 0px 0px hsl(30 8% 20% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(30 8% 20% / 0.00);
