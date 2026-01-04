@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/Untitled_design_(1)_1767493173610.png";
+import logoImage from "@assets/Untitled_design_(4)_1767493426357.png";
 
 const BOOKING_LINK = "https://calendly.com/yourlink";
 
