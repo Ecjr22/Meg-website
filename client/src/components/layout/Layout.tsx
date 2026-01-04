@@ -9,13 +9,13 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   return (
     <div 
-      className="min-h-screen flex flex-col"
+      className="min-h-screen flex flex-col bg-background"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: "auto",
+        backgroundPosition: "top center",
+        backgroundAttachment: "scroll",
+        backgroundRepeat: "repeat",
       }}
     >
       <Header />
