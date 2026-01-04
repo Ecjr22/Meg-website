@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { LeafIcon, BudIcon, SproutIcon, CheckLeafIcon } from "@/components/icons";
+import { OrganicBlob, CornerDecoration } from "@/components/decorative/OrganicShapes";
 import { BookOpen, Pencil, ArrowRight } from "lucide-react";
 
 const BOOKING_LINK = "https://calendly.com/yourlink";
@@ -67,8 +68,12 @@ const services = [
 export default function Services() {
   return (
     <Layout>
-      <section className="py-16 sm:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 sm:py-20 overflow-hidden">
+        <OrganicBlob className="absolute -top-40 -left-32 w-80 h-80" variant="blush" />
+        <OrganicBlob className="absolute bottom-20 -right-40 w-72 h-72" variant="primary" />
+        <CornerDecoration className="absolute top-8 right-8 w-24 h-24 text-primary hidden lg:block" position="top-right" />
+        
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Services

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { SproutIcon } from "@/components/icons";
+import { OrganicBlob, CornerDecoration } from "@/components/decorative/OrganicShapes";
 
 const BOOKING_LINK = "https://calendly.com/yourlink";
 
@@ -7,9 +8,11 @@ export function Hero() {
   return (
     <section className="relative py-16 sm:py-20 lg:py-28 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-card/50 to-background" />
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-      }} />
+      
+      <OrganicBlob className="absolute -top-20 -left-20 w-64 h-64 sm:w-80 sm:h-80" variant="primary" />
+      <OrganicBlob className="absolute -bottom-32 -right-20 w-72 h-72 sm:w-96 sm:h-96" variant="blush" />
+      <CornerDecoration className="absolute top-4 right-4 w-24 h-24 sm:w-32 sm:h-32 text-primary" position="top-right" />
+      <CornerDecoration className="absolute bottom-4 left-4 w-20 h-20 sm:w-28 sm:h-28 text-primary" position="bottom-left" />
       
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex justify-center mb-6">
