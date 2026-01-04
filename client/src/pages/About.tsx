@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { LeafIcon, CheckLeafIcon } from "@/components/icons";
 import { OrganicBlob, CornerDecoration } from "@/components/decorative/OrganicShapes";
 import { Heart, Star, Award, ArrowRight } from "lucide-react";
-import missMegPhoto from "@assets/Untitled_design_1767492680618.png";
+import missMegPortrait from "@assets/generated_images/illustrated_literacy_tutor_portrait.png";
 
 const BOOKING_LINK = "https://calendly.com/yourlink";
 
@@ -55,9 +55,9 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
             <div className="flex items-center justify-center">
               <img 
-                src={missMegPhoto} 
-                alt="Miss Meg holding a children's book, smiling warmly" 
-                className="w-72 h-auto sm:w-96 object-contain rounded-xl"
+                src={missMegPortrait} 
+                alt="Illustrated portrait of Miss Meg, a friendly literacy tutor" 
+                className="w-64 h-auto sm:w-80 object-contain rounded-2xl shadow-lg"
                 data-testid="img-miss-meg"
               />
             </div>
