@@ -54,17 +54,22 @@ export default function About() {
 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
             <div className="flex items-center justify-center">
-              <div className="relative">
-                <img 
-                  src={missMegPhoto} 
-                  alt="Miss Meg holding a children's book, smiling warmly" 
-                  className="w-72 h-72 sm:w-96 sm:h-96 object-cover object-top rounded-2xl shadow-lg"
-                  data-testid="img-miss-meg"
-                />
-                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-blush/40 rounded-xl flex items-center justify-center">
-                  <LeafIcon className="w-8 h-8 text-primary" />
+              <Card className="p-4 sm:p-6 bg-card/95 backdrop-blur-sm">
+                <div className="relative">
+                  <div className="absolute -inset-2 bg-gradient-to-br from-primary/20 via-blush/20 to-primary/10 rounded-2xl" />
+                  <img 
+                    src={missMegPhoto} 
+                    alt="Miss Meg holding a children's book, smiling warmly" 
+                    className="relative w-64 h-80 sm:w-80 sm:h-96 object-cover object-top rounded-xl shadow-md"
+                    data-testid="img-miss-meg"
+                  />
                 </div>
-              </div>
+                <div className="flex items-center justify-center gap-2 mt-4 pt-4 border-t border-border">
+                  <LeafIcon className="w-5 h-5 text-primary" />
+                  <span className="font-serif text-foreground font-medium">Miss Meg</span>
+                  <LeafIcon className="w-5 h-5 text-primary" />
+                </div>
+              </Card>
             </div>
 
             <div className="flex flex-col justify-center">
