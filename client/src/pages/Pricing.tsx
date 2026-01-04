@@ -1,15 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { LeafIcon, BudIcon, SproutIcon, CheckLeafIcon } from "@/components/icons";
-import { FileText, Flower2, ArrowRight } from "lucide-react";
+import { RootsIcon, BudIcon, SproutIcon, FlowerIcon, ButterflyIcon, LeafIcon, CheckLeafIcon } from "@/components/icons";
+import { ArrowRight } from "lucide-react";
 
 const BOOKING_LINK = "https://calendly.com/yourlink";
 
 const packages = [
   {
     name: "Roots Assessment",
-    icon: FileText,
+    icon: RootsIcon,
     description: "A comprehensive starting point",
     details: [
       "30-minute assessment session",
@@ -24,9 +24,8 @@ const packages = [
     description: "Perfect for getting started",
     details: [
       "8 thirty-minute tutoring sessions",
-      "1 written progress report",
+      "1 progress report",
       "Personalized lesson plans",
-      "Email support between sessions",
     ],
     highlighted: false,
   },
@@ -36,36 +35,30 @@ const packages = [
     description: "Building momentum",
     details: [
       "12 thirty-minute tutoring sessions",
-      "2 written progress reports",
+      "Progress reports",
       "Personalized lesson plans",
-      "Email support between sessions",
     ],
     highlighted: false,
   },
   {
     name: "Bloom",
-    icon: Flower2,
+    icon: FlowerIcon,
     description: "Comprehensive support",
     details: [
       "16 thirty-minute tutoring sessions",
-      "2 written progress reports",
+      "Progress reports",
       "Personalized lesson plans",
-      "Priority scheduling",
-      "Email support between sessions",
     ],
     highlighted: true,
   },
   {
     name: "Wings",
-    icon: LeafIcon,
-    description: "Our most popular package",
+    icon: ButterflyIcon,
+    description: "Our most comprehensive package",
     details: [
       "20 thirty-minute tutoring sessions",
-      "3 written progress reports",
+      "Progress reports",
       "Personalized lesson plans",
-      "Priority scheduling",
-      "Email support between sessions",
-      "Extended consultation time",
     ],
     highlighted: false,
   },

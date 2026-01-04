@@ -63,3 +63,45 @@ export function BranchIcon({ className = "w-full h-4" }: { className?: string })
     </svg>
   );
 }
+
+export function ButterflyIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 4v16" />
+      <path d="M12 8c-3-4-8-4-8 1s4 5 8 3" />
+      <path d="M12 8c3-4 8-4 8 1s-4 5-8 3" />
+      <path d="M12 14c-2 2-5 2-5-1s2-3 5-1" />
+      <path d="M12 14c2 2 5 2 5-1s-2-3-5-1" />
+      <circle cx="11" cy="5" r="0.5" fill="currentColor" />
+      <circle cx="13" cy="5" r="0.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function FlowerIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 5c-1-2-3-2-4 0s0 4 2 5c-2 1-3 3-2 5s3 2 4 0" />
+      <path d="M12 5c1-2 3-2 4 0s0 4-2 5c2 1 3 3 2 5s-3 2-4 0" />
+      <path d="M7.5 9c-2-1-4 0-4 2s2 3 4 2" />
+      <path d="M16.5 9c2-1 4 0 4 2s-2 3-4 2" />
+      <path d="M12 20v2" />
+    </svg>
+  );
+}
+
+export function RootsIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 4v6" />
+      <path d="M12 10c-2 3-2 6-4 10" />
+      <path d="M12 10c2 3 2 6 4 10" />
+      <path d="M12 10c0 4 0 7 0 10" />
+      <path d="M10 14c-1 2-3 4-5 6" />
+      <path d="M14 14c1 2 3 4 5 6" />
+      <path d="M8 4c2 1 3 2 4 4" />
+      <path d="M16 4c-2 1-3 2-4 4" />
+    </svg>
+  );
+}

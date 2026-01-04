@@ -1,8 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { LeafIcon, SproutIcon, CheckLeafIcon } from "@/components/icons";
+import { LeafIcon, CheckLeafIcon } from "@/components/icons";
 import { Heart, Star, Award, ArrowRight } from "lucide-react";
+import missMegPhoto from "@assets/Virtual_Literacy_Tutoring!_1767490339127.png";
 
 const BOOKING_LINK = "https://calendly.com/yourlink";
 
@@ -49,11 +50,14 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
             <div className="flex items-center justify-center">
               <div className="relative">
-                <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-gradient-to-br from-primary/20 to-blush/20 flex items-center justify-center">
-                  <SproutIcon className="w-32 h-32 text-primary/40" />
-                </div>
-                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-blush/30 rounded-xl flex items-center justify-center">
-                  <LeafIcon className="w-10 h-10 text-primary" />
+                <img 
+                  src={missMegPhoto} 
+                  alt="Miss Meg holding a children's book, smiling warmly" 
+                  className="w-72 h-72 sm:w-96 sm:h-96 object-cover object-top rounded-2xl shadow-lg"
+                  data-testid="img-miss-meg"
+                />
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-blush/40 rounded-xl flex items-center justify-center">
+                  <LeafIcon className="w-8 h-8 text-primary" />
                 </div>
               </div>
             </div>

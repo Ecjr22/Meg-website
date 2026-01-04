@@ -113,6 +113,28 @@ export default function Services() {
             ))}
           </div>
 
+          <Card className="mt-12 bg-primary/5 border-primary/20">
+            <CardContent className="p-8">
+              <h2 className="font-serif text-2xl font-bold text-foreground mb-6 text-center">
+                I Provide:
+              </h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                {[
+                  "1:1 Virtual learning",
+                  "Multiple sessions/week",
+                  "Play-based lessons",
+                  "High quality literacy instruction",
+                  "Lesson plans individually tailored to your child's interests & needs",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <CheckLeafIcon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
           <div className="mt-12 text-center">
             <p className="text-muted-foreground mb-6">
               Not sure which service is right for your child? Let's talk about it.
