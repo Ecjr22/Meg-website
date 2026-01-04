@@ -1,0 +1,112 @@
+Build a mobile-first, fast, SEO-optimized website for a virtual literacy tutoring business called “Roots & Wings Literacy”.
+
+IMPORTANT STYLE / THEME (match the attached reference images):
+- Overall vibe: warm, gentle, nature-inspired, “handmade classroom” aesthetic.
+- Colors: sage greens + warm beige/cream + soft blush accents + warm brown typography.
+- Design motifs: subtle paper/wood texture backgrounds, light botanical line art/doodles, soft rounded shapes, calm spacing, cozy but professional.
+- Typography: elegant serif for headings (warm, bookish), easy-to-read sans-serif for body text.
+- Layout: clean, modern, lots of whitespace, friendly, approachable. Use gentle section dividers and small botanical icons.
+
+TECH STACK (fast + simple):
+- Use Astro (preferred) with static pages for speed, or Next.js static output if Astro isn’t available.
+- Use modern CSS (Tailwind optional). Keep dependencies minimal.
+- Make everything responsive and accessible (WCAG-friendly contrast, semantic HTML, keyboard navigation).
+
+PAGES (create these routes):
+1) Home (/)
+2) Services (/services)
+3) Pricing (/pricing)
+4) About (/about)
+5) Contact (/contact)
+
+GLOBAL REQUIREMENTS:
+- Site must be fast (static generation, optimized images, minimal JS).
+- Mobile-first responsive layout, then scale up to tablet/desktop.
+- Add a sticky header with logo + nav (hamburger on mobile).
+- Add a strong CTA button in header: “Book a Free Consult”.
+- Add footer with quick links, contact info, and a short tagline.
+
+SEO REQUIREMENTS (do this for every page):
+- Unique <title> and meta description per page
+- Open Graph + Twitter card meta tags per page
+- Canonical URL tags
+- JSON-LD schema:
+  - Use LocalBusiness or EducationalOrganization schema + Service schema for tutoring/virtual literacy services
+- Generate sitemap.xml and robots.txt
+- Use clean headings structure (one H1 per page, logical H2/H3)
+- Add internal links between pages
+- Performance best practices (image optimization, lazy-load non-critical images)
+
+CONTENT (use this exact business content):
+Business name: Roots & Wings Literacy
+Primary service: Virtual Literacy Tutoring for Kids (1:1)
+Audience: Parents of elementary-aged children, learners needing reading support and dyslexia support
+
+Services / Focus Areas:
+- Dyslexia support
+- Foundational literacy skills
+- Reading intervention
+- Spelling and writing skills
+- Comprehension
+
+What I provide (include as a highlighted section):
+- 1:1 Virtual learning
+- Multiple sessions/week
+- Play-based lessons
+- High quality literacy instruction
+- Lesson plans individually tailored to your child's interests & needs
+
+Pricing & Packaging (create a clean pricing section + dedicated pricing page):
+- Roots Assessment — a 30 minute assessment session with a written assessment report
+- Seedling — 8 thirty minute tutoring sessions + 1 progress report
+- Sprout — 12 thirty minute tutoring sessions + progress reports
+- Bloom — 16 thirty minute tutoring sessions + progress reports
+- Wings — 20 thirty minute tutoring sessions + progress reports
+
+Include this note on pricing page:
+“Prices reflect the sessions with your learner as well as the time and effort that goes into creating individualized resources and planning engaging, effective, and FUN lessons!”
+
+CTA / Booking:
+- Add “Book a Free Consult Call” buttons in multiple places.
+- For now, link buttons to a placeholder booking link like: https://calendly.com/yourlink (make it easy to replace)
+
+CONTACT PAGE:
+- Contact form with fields: Parent/Guardian Name, Email, Child’s Age/Grade, Areas of Concern (multi-select), Message
+- Form should validate inputs and show success/error UI.
+- If backend email isn’t configured, store submissions in a simple JSON file or console log with clear instructions for switching to EmailJS / Formspree later.
+
+ABOUT PAGE:
+- Create a warm, professional bio section for “Miss Meg” (use placeholder bio text that can be edited easily).
+- Include a “Why Roots & Wings?” section explaining nurturing confidence + foundational growth.
+
+HOMEPAGE LAYOUT (sections in this order):
+1) Hero: “Virtual Literacy Tutoring with Miss Meg” + short supportive tagline + CTA button
+2) Trust strip: “1:1 • Play-based • Personalized • Virtual”
+3) Services overview (the 5 focus areas with small botanical icons)
+4) “I Provide” highlight block (the list above)
+5) Pricing preview (card layout linking to /pricing)
+6) Testimonials (3 placeholder testimonials with parent voice)
+7) FAQ (5–7 FAQs: virtual sessions, dyslexia support, session length, materials, scheduling, progress reports)
+8) Final CTA banner
+
+DESIGN DETAILS:
+- Use soft card backgrounds and rounded corners.
+- Use small leaf/bud icons as bullets (similar to reference images).
+- Add gentle background textures (lightweight CSS or optimized subtle background image).
+- Include a simple logo placeholder at top; create a text-based logo “roots & wings literacy” with a small icon mark (book + sprout) in SVG.
+
+DELIVERABLES:
+- Provide full project files.
+- Include a README with:
+  - how to run locally
+  - how to deploy on Replit
+  - where to change colors, fonts, and booking link
+  - how to add real domain + analytics
+- Include an “SEO checklist” section in the README showing what was implemented.
+
+EXTRAS (implement):
+- Add a lightweight analytics placeholder (commented) for Google Analytics or Plausible.
+- Add image optimization guidance and example usage.
+- Make sure the site passes Lighthouse with strong scores (especially Performance + SEO).
+
+Use the two attached images as the visual reference for color palette and aesthetic.
