@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { LeafIcon, CheckLeafIcon } from "@/components/icons";
 import { OrganicBlob, CornerDecoration } from "@/components/decorative/OrganicShapes";
 import { Heart, Star, Award, ArrowRight } from "lucide-react";
-import missMegPhoto from "@assets/Virtual_Literacy_Tutoring!_1767490339127.png";
+import missMegPhoto from "@assets/Untitled_design_1767492680618.png";
 
 const BOOKING_LINK = "https://calendly.com/yourlink";
 
