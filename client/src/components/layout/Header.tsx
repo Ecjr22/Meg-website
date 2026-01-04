@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/Untitled_design_(5)_1767493515512.png";
+import { BookSproutIcon } from "@/components/icons";
 
 const BOOKING_LINK = "https://calendly.com/yourlink";
 
@@ -23,11 +23,7 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
           <Link href="/" className="flex items-center gap-2 group" data-testid="link-logo">
-            <img 
-              src={logoImage} 
-              alt="Roots & Wings Literacy logo" 
-              className="h-10 w-auto transition-transform group-hover:scale-105"
-            />
+            <BookSproutIcon className="w-8 h-8 text-primary transition-transform group-hover:scale-105" />
             <span className="font-serif text-lg sm:text-xl font-bold text-foreground">
               roots & wings literacy
             </span>
