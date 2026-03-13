@@ -42,7 +42,7 @@ export default function About() {
         <CornerDecoration className="absolute bottom-8 right-8 w-28 h-28 text-primary hidden lg:block" position="bottom-right" />
         
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="bg-background/70 backdrop-blur-sm rounded-3xl px-6 py-8 text-center mb-12">
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               About Miss Meg
             </h1>
@@ -129,7 +129,7 @@ export default function About() {
             </CardContent>
           </Card>
 
-          <div className="mt-12 text-center">
+          <div className="mt-12 bg-background/70 backdrop-blur-sm rounded-3xl px-6 py-8 text-center">
             <p className="text-muted-foreground mb-6">
               I'd love to learn more about your child and how I can help.
             </p>

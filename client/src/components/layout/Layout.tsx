@@ -20,13 +20,7 @@ export function Layout({ children }: LayoutProps) {
     >
       <Header />
       <main className="flex-1">
-        <div
-          style={{
-            background: "rgba(252, 248, 243, 0.30)",
-          }}
-        >
-          {children}
-        </div>
+        {children}
       </main>
       <Footer />
     </div>

@@ -5,8 +5,6 @@ import { LeafIcon, BudIcon, SproutIcon, CheckLeafIcon } from "@/components/icons
 import { OrganicBlob, CornerDecoration } from "@/components/decorative/OrganicShapes";
 import { BookOpen, Pencil, ArrowRight } from "lucide-react";
 
-const BOOKING_LINK = "https://calendly.com/yourlink";
-
 const services = [
   {
     icon: LeafIcon,
@@ -74,7 +72,7 @@ export default function Services() {
         <CornerDecoration className="absolute top-8 right-8 w-24 h-24 text-primary hidden lg:block" position="top-right" />
         
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="bg-background/70 backdrop-blur-sm rounded-3xl px-6 py-8 text-center mb-12">
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Services
             </h1>
@@ -140,13 +138,13 @@ export default function Services() {
             </CardContent>
           </Card>
 
-          <div className="mt-12 text-center">
+          <div className="mt-12 bg-background/70 backdrop-blur-sm rounded-3xl px-6 py-8 text-center">
             <p className="text-muted-foreground mb-6">
               Not sure which service is right for your child? Let's talk about it.
             </p>
-            <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
-              <Button className="bg-blush text-blush-foreground rounded-full" data-testid="button-services-book-consult">
-                Book a Free Consultation
+            <a href="/contact">
+              <Button className="bg-blush text-blush-foreground rounded-full" data-testid="button-services-contact">
+                Get in Touch
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </a>
