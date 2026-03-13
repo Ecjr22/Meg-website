@@ -1,0 +1,159 @@
+Roots & Wings Literacy
+A beautiful, mobile-first, SEO-optimized website for a virtual literacy tutoring business.
+
+Quick Start
+Running Locally
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+The site will be available at http://localhost:5000
+
+Deploying on Replit
+Click the “Run” button or use the “Start application” workflow
+The site will automatically build and deploy
+Use Replit’s deployment feature to publish to production
+Configuration
+Changing the Booking Link
+The booking link (Calendly) is set in multiple components. To update:
+
+Search for BOOKING_LINK in the following files:
+client/src/components/layout/Header.tsx
+client/src/components/layout/Footer.tsx
+client/src/components/sections/Hero.tsx
+client/src/components/sections/CTABanner.tsx
+client/src/pages/Services.tsx
+client/src/pages/Pricing.tsx
+client/src/pages/About.tsx
+client/src/pages/Contact.tsx
+Replace https://calendly.com/yourlink with your actual Calendly URL
+Customizing Colors
+Colors are defined in client/src/index.css:
+
+Primary (Sage Green): --primary: 145 25% 38%;
+Background (Warm Beige): --background: 30 8% 97%;
+Blush Accent: --blush: 12 45% 75%;
+Foreground (Warm Brown): --foreground: 25 12% 15%;
+Colors use HSL format: hue saturation% lightness%
+
+Customizing Fonts
+Fonts are loaded in client/index.html and configured in client/src/index.css:
+
+Serif (Headings): Libre Baskerville
+Sans (Body): DM Sans
+To change fonts:
+
+Update the Google Fonts link in client/index.html
+Update --font-serif and --font-sans in client/src/index.css
+Adding a Custom Domain
+Deploy your site on Replit
+Go to your Replit project settings
+Navigate to “Domains”
+Add your custom domain and follow the DNS configuration instructions
+Adding Analytics
+Analytics placeholders are included in client/index.html. Uncomment and configure:
+
+Google Analytics:
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+Plausible Analytics:
+
+<script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
+Contact Form
+The contact form stores submissions in memory. To switch to email notifications:
+
+Using EmailJS
+Sign up at emailjs.com
+Create an email template
+Install EmailJS: npm install @emailjs/browser
+Update client/src/pages/Contact.tsx to use EmailJS
+Using Formspree
+Sign up at formspree.io
+Create a form and get your endpoint
+Update the form action in client/src/pages/Contact.tsx
+SEO Checklist
+Implemented
+Unique <title> tags per page
+Unique meta descriptions per page
+Open Graph tags (og:title, og:description, og:image, og:url)
+Twitter Card meta tags
+Canonical URL tags
+JSON-LD structured data:
+EducationalOrganization schema
+LocalBusiness schema
+Service schema
+Person schema (About page)
+ContactPage schema
+sitemap.xml
+robots.txt
+Semantic HTML with proper heading hierarchy (H1 → H2 → H3)
+Internal linking between all pages
+Mobile-first responsive design
+Fast loading (minimal dependencies, optimized assets)
+Accessible (WCAG-friendly contrast, semantic markup)
+Recommended Next Steps
+Add real photos/images and optimize with WebP format
+Create og-image.png (1200x630px) for social sharing
+Set up Google Search Console
+Submit sitemap to search engines
+Add alt text to any images
+Configure 301 redirects if needed
+Image Optimization
+When adding images:
+
+Use WebP format for better compression
+Provide multiple sizes for responsive images
+Always include alt text for accessibility
+Use lazy loading for below-the-fold images
+Example:
+
+<img
+  src="/images/hero.webp"
+  alt="Child reading with Miss Meg"
+  loading="lazy"
+  width="800"
+  height="600"
+/>
+Project Structure
+├── client/
+│   ├── public/
+│   │   ├── favicon.png
+│   │   ├── robots.txt
+│   │   └── sitemap.xml
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── icons.tsx          # Custom botanical SVG icons
+│   │   │   ├── layout/            # Header, Footer, Layout
+│   │   │   ├── sections/          # Homepage sections
+│   │   │   └── ui/                # shadcn/ui components
+│   │   ├── pages/
+│   │   │   ├── Home.tsx
+│   │   │   ├── Services.tsx
+│   │   │   ├── Pricing.tsx
+│   │   │   ├── About.tsx
+│   │   │   └── Contact.tsx
+│   │   ├── App.tsx
+│   │   └── index.css
+│   └── index.html
+├── server/
+│   ├── routes.ts                  # API endpoints
+│   └── storage.ts                 # In-memory data storage
+├── shared/
+│   └── schema.ts                  # TypeScript types & validation
+└── README.md
+Technology Stack
+Frontend: React, TypeScript, Tailwind CSS
+Backend: Express.js, Node.js
+Routing: Wouter
+Styling: Tailwind CSS + shadcn/ui components
+Forms: React Hook Form + Zod validation
+Data Fetching: TanStack Query
+License
+Copyright © 2024 Roots & Wings Literacy. All rights reserved.
