@@ -2,8 +2,6 @@ import { Link } from "wouter";
 import { BookSproutIcon, BranchIcon } from "@/components/icons";
 import { Mail, MapPin } from "lucide-react";
 
-const BOOKING_LINK = "https://calendly.com/yourlink";
-
 export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
@@ -41,15 +39,13 @@ export function Footer() {
               <Link href="/contact" className="text-muted-foreground hover:text-foreground text-sm transition-colors" data-testid="link-footer-contact">
                 Contact
               </Link>
-              <a 
-                href={BOOKING_LINK} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <Link
+                href="/contact"
                 className="text-primary hover:text-primary/80 text-sm font-medium transition-colors"
-                data-testid="link-footer-booking"
+                data-testid="link-footer-free-consult"
               >
-                Book a Free Consult
-              </a>
+                Free Consultation
+              </Link>
             </nav>
           </div>
 

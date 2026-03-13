@@ -72,7 +72,7 @@ export default function Pricing() {
         <CornerDecoration className="absolute top-8 left-8 w-24 h-24 text-primary hidden lg:block" position="top-left" />
         
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-background/70 backdrop-blur-sm rounded-3xl px-6 py-8 text-center mb-12">
+          <div className="text-center mb-12">
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Pricing & Packages
             </h1>
@@ -134,7 +134,7 @@ export default function Pricing() {
             </CardContent>
           </Card>
 
-          <div className="mt-12 bg-background/70 backdrop-blur-sm rounded-3xl px-6 py-8 text-center">
+          <div className="mt-12 text-center">
             <p className="text-muted-foreground mb-6">
               Ready to get started? Let's find the right package for your child.
             </p>

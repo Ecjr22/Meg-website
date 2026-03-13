@@ -14,32 +14,30 @@ export function Hero() {
       <CornerDecoration className="absolute bottom-4 left-4 w-20 h-20 sm:w-28 sm:h-28 text-primary" position="bottom-left" />
       
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="bg-background/70 backdrop-blur-sm rounded-3xl px-6 py-10 sm:px-10">
-          <div className="flex justify-center mb-6">
-            <SproutIcon className="w-12 h-12 text-primary" />
-          </div>
-          
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Virtual Literacy Tutoring<br className="hidden sm:block" /> with Miss Meg
-          </h1>
-          
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-            Helping your child build strong reading roots and the confidence to soar. 
-            Personalized 1:1 sessions designed to nurture a lifelong love of learning.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-blush text-blush-foreground rounded-full text-lg px-8" data-testid="button-hero-contact">
-                Get in Touch
-              </Button>
-            </Link>
-            <Link href="/services">
-              <Button size="lg" variant="outline" className="rounded-full text-lg px-8" data-testid="button-hero-learn-more">
-                Learn More
-              </Button>
-            </Link>
-          </div>
+        <div className="flex justify-center mb-6">
+          <SproutIcon className="w-12 h-12 text-primary" />
+        </div>
+        
+        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6 leading-tight">
+          Virtual Literacy Tutoring<br className="hidden sm:block" /> with Miss Meg
+        </h1>
+        
+        <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+          Helping your child build strong reading roots and the confidence to soar. 
+          Personalized 1:1 sessions designed to nurture a lifelong love of learning.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/contact">
+            <Button size="lg" className="bg-blush text-blush-foreground rounded-full text-lg px-8" data-testid="button-hero-contact">
+              Get in Touch
+            </Button>
+          </Link>
+          <Link href="/services">
+            <Button size="lg" variant="outline" className="rounded-full text-lg px-8" data-testid="button-hero-learn-more">
+              Learn More
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

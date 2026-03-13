@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "How do I schedule sessions?",
-    answer: "After your free consultation, we'll work together to find times that fit your family's schedule. I offer flexibility with weekday and some weekend availability.",
+    answer: "After reaching out through the contact page, we'll work together to find times that fit your family's schedule. I offer flexibility with weekday and some weekend availability.",
   },
   {
     question: "How often will I receive progress updates?",
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "What age groups do you work with?",
-    answer: "I work primarily with elementary-aged children (grades K-5), but I'm happy to discuss your child's specific needs during our free consultation.",
+    answer: "I work primarily with elementary-aged children (grades K-5), but I'm happy to discuss your child's specific needs — just reach out through the contact page.",
   },
 ];
 
