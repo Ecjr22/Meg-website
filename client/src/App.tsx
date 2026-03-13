@@ -1,5 +1,5 @@
-import { Switch, Route, useLocation } from "wouter";
-import { useEffect } from "react";
+import { Switch, Route, Router, useLocation } from "wouter";
+import { useState, useEffect, useCallback } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -11,6 +11,22 @@ import Pricing from "@/pages/Pricing";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
+
+function useHashLocation(): [string, (to: string) => void] {
+  const [loc, setLoc] = useState(() => window.location.hash.slice(1) || "/");
+
+  useEffect(() => {
+    const handler = () => setLoc(window.location.hash.slice(1) || "/");
+    window.addEventListener("hashchange", handler);
+    return () => window.removeEventListener("hashchange", handler);
+  }, []);
+
+  const navigate = useCallback((to: string) => {
+    window.location.hash = to;
+  }, []);
+
+  return [loc, navigate];
+}
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -65,7 +81,7 @@ function ContactPage() {
   );
 }
 
-function Router() {
+function AppRouter() {
   return (
     <>
       <ScrollToTop />
@@ -86,7 +102,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        <Router hook={useHashLocation}>
+          <AppRouter />
+        </Router>
       </TooltipProvider>
     </QueryClientProvider>
   );
