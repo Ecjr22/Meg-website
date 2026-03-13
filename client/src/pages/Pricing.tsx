@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { RootsIcon, BudIcon, SproutIcon, FlowerIcon, ButterflyIcon, LeafIcon, CheckLeafIcon } from "@/components/icons";
 import { OrganicBlob, CornerDecoration } from "@/components/decorative/OrganicShapes";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 const packages = [
   {
@@ -138,12 +139,12 @@ export default function Pricing() {
             <p className="text-muted-foreground mb-6">
               Ready to get started? Let's find the right package for your child.
             </p>
-            <a href="/contact">
+            <Link href="/contact">
               <Button className="bg-blush text-blush-foreground rounded-full" data-testid="button-pricing-contact">
                 Get in Touch
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

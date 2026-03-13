@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { LeafIcon, BudIcon, SproutIcon, CheckLeafIcon } from "@/components/icons";
 import { OrganicBlob, CornerDecoration } from "@/components/decorative/OrganicShapes";
 import { BookOpen, Pencil, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 const services = [
   {
@@ -142,12 +143,12 @@ export default function Services() {
             <p className="text-muted-foreground mb-6">
               Not sure which service is right for your child? Let's talk about it.
             </p>
-            <a href="/contact">
+            <Link href="/contact">
               <Button className="bg-blush text-blush-foreground rounded-full" data-testid="button-services-contact">
                 Get in Touch
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
