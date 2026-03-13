@@ -17,9 +17,27 @@
     </script> -->
     <!-- Plausible Analytics placeholder - uncomment and add your domain when ready -->
     <!-- <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script> -->
+    <!-- GitHub Pages SPA redirect handler -->
+    <script>
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <!-- Netlify Forms detection form (hidden, required for Netlify to register the form) -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="parentName" />
+      <input type="email" name="email" />
+      <input type="text" name="childAgeGrade" />
+      <input type="text" name="areasOfConcern" />
+      <textarea name="message"></textarea>
+    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

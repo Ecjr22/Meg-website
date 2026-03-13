@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { SproutIcon } from "@/components/icons";
 import { OrganicBlob, CornerDecoration } from "@/components/decorative/OrganicShapes";
-
-const BOOKING_LINK = "https://calendly.com/yourlink";
+import { Link } from "wouter";
 
 export function Hero() {
   return (
@@ -29,16 +28,16 @@ export function Hero() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="bg-blush text-blush-foreground rounded-full text-lg px-8" data-testid="button-hero-book-consult">
-              Book a Free Consult
+          <Link href="/contact">
+            <Button size="lg" className="bg-blush text-blush-foreground rounded-full text-lg px-8" data-testid="button-hero-contact">
+              Get in Touch
             </Button>
-          </a>
-          <a href="/services">
+          </Link>
+          <Link href="/services">
             <Button size="lg" variant="outline" className="rounded-full text-lg px-8" data-testid="button-hero-learn-more">
               Learn More
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

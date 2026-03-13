@@ -4,8 +4,6 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookSproutIcon } from "@/components/icons";
 
-const BOOKING_LINK = "https://calendly.com/yourlink";
-
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
@@ -44,24 +42,16 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
-            <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:block">
-              <Button className="bg-blush text-blush-foreground rounded-full" data-testid="button-book-consult-header">
-                Book a Free Consult
-              </Button>
-            </a>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-              data-testid="button-mobile-menu"
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+            data-testid="button-mobile-menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </Button>
         </div>
 
         {mobileMenuOpen && (
@@ -79,11 +69,6 @@ export function Header() {
                   </Button>
                 </Link>
               ))}
-              <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer" className="mt-2">
-                <Button className="w-full bg-blush text-blush-foreground rounded-full" data-testid="button-book-consult-mobile">
-                  Book a Free Consult
-                </Button>
-              </a>
             </nav>
           </div>
         )}

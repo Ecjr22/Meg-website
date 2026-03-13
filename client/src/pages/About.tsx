@@ -5,8 +5,7 @@ import { LeafIcon, CheckLeafIcon } from "@/components/icons";
 import { OrganicBlob, CornerDecoration } from "@/components/decorative/OrganicShapes";
 import { Heart, Star, Award, ArrowRight } from "lucide-react";
 import missMegPortrait from "@assets/generated_images/illustrated_literacy_tutor_portrait.png";
-
-const BOOKING_LINK = "https://calendly.com/yourlink";
+import { Link } from "wouter";
 
 const values = [
   {
@@ -58,6 +57,8 @@ export default function About() {
                 src={missMegPortrait} 
                 alt="Illustrated portrait of Miss Meg, a friendly literacy tutor" 
                 className="w-64 h-auto sm:w-80 object-contain rounded-2xl shadow-lg"
+                loading="lazy"
+                decoding="async"
                 data-testid="img-miss-meg"
               />
             </div>
@@ -132,12 +133,12 @@ export default function About() {
             <p className="text-muted-foreground mb-6">
               I'd love to learn more about your child and how I can help.
             </p>
-            <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
-              <Button className="bg-blush text-blush-foreground rounded-full" data-testid="button-about-book-consult">
+            <Link href="/contact">
+              <Button className="bg-blush text-blush-foreground rounded-full" data-testid="button-about-contact">
                 Let's Chat
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

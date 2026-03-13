@@ -8,8 +8,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { LeafIcon, SproutIcon } from "@/components/icons";
 import { Mail, MapPin, Clock, Send, Loader2, CheckCircle } from "lucide-react";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -22,11 +20,16 @@ import {
 } from "@/components/ui/form";
 import { contactFormSchema, areasOfConcernOptions, type ContactFormData } from "@shared/schema";
 
-const BOOKING_LINK = "https://calendly.com/yourlink";
+function encode(data: Record<string, string>) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
 
 export default function Contact() {
   const { toast } = useToast();
   const [submitted, setSubmitted] = useState(false);
+  const [isPending, setIsPending] = useState(false);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -39,29 +42,35 @@ export default function Contact() {
     },
   });
 
-  const mutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: () => {
+  const onSubmit = async (data: ContactFormData) => {
+    setIsPending(true);
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          parentName: data.parentName,
+          email: data.email,
+          childAgeGrade: data.childAgeGrade,
+          areasOfConcern: data.areasOfConcern.join(", "),
+          message: data.message || "",
+        }),
+      });
       setSubmitted(true);
       toast({
         title: "Message sent!",
         description: "Thank you for reaching out. I'll get back to you soon!",
       });
-    },
-    onError: (error: Error) => {
+    } catch {
       toast({
         title: "Something went wrong",
-        description: error.message || "Please try again later.",
+        description: "Please try again or email me directly.",
         variant: "destructive",
       });
-    },
-  });
-
-  const onSubmit = (data: ContactFormData) => {
-    mutation.mutate(data);
+    } finally {
+      setIsPending(false);
+    }
   };
 
   if (submitted) {
@@ -78,24 +87,17 @@ export default function Contact() {
             <p className="text-muted-foreground text-lg mb-8">
               Your message has been received. I'll review your information and get back to you within 1-2 business days.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
-                <Button className="bg-blush text-blush-foreground rounded-full" data-testid="button-success-book-consult">
-                  Book Your Free Consultation Now
-                </Button>
-              </a>
-              <Button 
-                variant="outline" 
-                className="rounded-full"
-                onClick={() => {
-                  setSubmitted(false);
-                  form.reset();
-                }}
-                data-testid="button-send-another"
-              >
-                Send Another Message
-              </Button>
-            </div>
+            <Button 
+              variant="outline" 
+              className="rounded-full"
+              onClick={() => {
+                setSubmitted(false);
+                form.reset();
+              }}
+              data-testid="button-send-another"
+            >
+              Send Another Message
+            </Button>
           </div>
         </section>
       </Layout>
@@ -120,7 +122,14 @@ export default function Contact() {
               <Card>
                 <CardContent className="p-6 sm:p-8">
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <form
+                      name="contact"
+                      method="POST"
+                      data-netlify="true"
+                      onSubmit={form.handleSubmit(onSubmit)}
+                      className="space-y-6"
+                    >
+                      <input type="hidden" name="form-name" value="contact" />
                       <div className="grid sm:grid-cols-2 gap-6">
                         <FormField
                           control={form.control}
@@ -242,10 +251,10 @@ export default function Contact() {
                       <Button 
                         type="submit" 
                         className="w-full bg-blush text-blush-foreground rounded-full"
-                        disabled={mutation.isPending}
+                        disabled={isPending}
                         data-testid="button-submit-contact"
                       >
-                        {mutation.isPending ? (
+                        {isPending ? (
                           <>
                             <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                             Sending...
@@ -322,14 +331,9 @@ export default function Contact() {
                     <SproutIcon className="w-6 h-6 text-primary" />
                     <h3 className="font-serif font-bold text-foreground">Ready to Start?</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Skip the form and book your free consultation directly!
+                  <p className="text-sm text-muted-foreground">
+                    Fill out the form and I'll get back to you within 1-2 business days to discuss your child's needs.
                   </p>
-                  <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" className="w-full rounded-full" data-testid="button-contact-book-consult">
-                      Book Free Consult
-                    </Button>
-                  </a>
                 </CardContent>
               </Card>
             </div>

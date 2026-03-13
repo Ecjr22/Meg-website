@@ -4,12 +4,13 @@
 A mobile-first, SEO-optimized website for a virtual literacy tutoring business. The site features a warm, nature-inspired "handmade classroom" aesthetic with sage greens, warm beige/cream, and soft blush accents.
 
 ## Current State
-- **Status**: Complete MVP
+- **Status**: Complete MVP — Netlify/GitHub-ready
 - **Pages**: Home, Services, Pricing, About, Contact
-- **Features**: Contact form with validation, SEO meta tags, JSON-LD schema, sitemap, robots.txt
+- **Features**: Netlify Forms contact form, SEO meta tags, JSON-LD schema, sitemap, robots.txt, image lazy-loading, GitHub Pages SPA routing
 
 ## Recent Changes
 - 2026-01-04: Initial build complete with all 5 pages, contact form API, and SEO implementation
+- 2026-03-13: Netlify Forms integration (replaces server API), removed "Book a Free Consult" buttons, added image lazy loading, GitHub Pages 404 SPA redirect, netlify.toml config
 
 ## Project Architecture
 
@@ -46,22 +47,17 @@ A mobile-first, SEO-optimized website for a virtual literacy tutoring business. 
 - **Sans (Body)**: DM Sans
 
 ### Configuration
-- Booking link: Search for `BOOKING_LINK` constant in components
 - Analytics: Placeholders in client/index.html
+- No booking/Calendly links remain in the codebase
 
-## API Endpoints
+## Contact Form
+- Uses **Netlify Forms** — submits via `fetch` POST to `/` with `form-name: contact`
+- Hidden detection form in `client/index.html` (required by Netlify)
+- Falls back gracefully in non-Netlify environments (dev/GitHub Pages)
 
-### POST /api/contact
-Submits a contact form.
-```typescript
-{
-  parentName: string;
-  email: string;
-  childAgeGrade: string;
-  areasOfConcern: string[];
-  message?: string;
-}
-```
+## Deployment
+- **Netlify**: `netlify.toml` at repo root — build: `npm run build`, publish: `dist/public`, SPA redirects configured
+- **GitHub Pages**: `client/public/404.html` redirects unknown paths to root; `client/index.html` restores path from sessionStorage
 
 ## User Preferences
 - Mobile-first responsive design
