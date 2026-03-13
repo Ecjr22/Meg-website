@@ -68,9 +68,20 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border text-center">
+        <div className="mt-12 pt-8 border-t border-border text-center space-y-2">
           <p className="text-muted-foreground text-sm">
             &copy; {new Date().getFullYear()} Roots & Wings Literacy. All rights reserved.
+          </p>
+          <p className="text-muted-foreground/50 text-xs">
+            Site by{" "}
+            <a
+              href="https://www.carmonacreations.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-muted-foreground transition-colors"
+            >
+              Carmona Creations LLC
+            </a>
           </p>
         </div>
       </div>
