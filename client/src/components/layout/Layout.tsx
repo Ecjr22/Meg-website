@@ -22,7 +22,7 @@ export function Layout({ children }: LayoutProps) {
       <main className="flex-1">
         <div
           style={{
-            background: "rgba(252, 248, 243, 0.50)",
+            background: "rgba(252, 248, 243, 0.30)",
           }}
         >
           {children}
