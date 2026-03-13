@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Google Analytics placeholder - uncomment and add your ID when ready -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
+    <!-- Plausible Analytics placeholder - uncomment and add your domain when ready -->
+    <!-- <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script> -->
+    <!-- GitHub Pages SPA redirect handler -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          window.history.replaceState(
+            null, null,
+            l.pathname.slice(0, -1) + decoded[0] +
+            (decoded.slice(1).join('?') || '') + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+    <script type="module" crossorigin src="./assets/index-4AAlTn4V.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CQtD51jF.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Netlify Forms detection form (hidden, required for Netlify to register the form) -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="parentName" />
+      <input type="email" name="email" />
+      <input type="text" name="childAgeGrade" />
+      <input type="text" name="areasOfConcern" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>
